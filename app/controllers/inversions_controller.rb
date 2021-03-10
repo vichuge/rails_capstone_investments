@@ -1,12 +1,12 @@
-class TransactionsController < ApplicationController
+class InversionsController < ApplicationController
   include SessionsHelper
   def index
-    @transactions = Transaction.where(author_id: current_user)
+    @transactions = Inversion.where(author_id: current_user)
     @total = @transactions.sum('amount')
   end
 
   def external
-    @transactions = Transaction.where(author_id: current_user)
+    @transactions = Inversion.where(author_id: current_user)
     @total = @transactions.sum('amount')
   end
 

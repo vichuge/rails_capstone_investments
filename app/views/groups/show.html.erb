@@ -1,0 +1,27 @@
+<div class="row text-center">
+    <div class="col-12">
+      <h1>All inversions to the Disney+ product</h1>
+    </div>
+  </div>
+  <div class="list-group">
+    <% @groups.each do |g| %>
+    <a
+      href="#"
+      class="list-group-item list-group-item-action"
+      aria-current="true"
+    >
+      <div class="row">
+        <div class="col-2">
+          <i class="fas fa-<%= g.icon %> fa-3x"></i>
+        </div>
+        <div class="col-10">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= g.name %></h5>
+            <small><%= g.created_at.strftime("%d %B %Y") %></small>
+          </div>
+        </div>
+      </div>
+    </a>
+    <% end %>
+  </div>
+  
