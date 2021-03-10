@@ -13,6 +13,11 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+  <div class="alert alert-<%= type %>">
+    <%= msg %>
+  </div>
+<% end %>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <% if current_user %>
