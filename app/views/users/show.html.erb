@@ -3,7 +3,7 @@
 <div class="row mt-5">
   <div class="col-md-4"></div>
   <div class="col-md-4">
-    <div class="card" style="width: 18rem">
+    <div class="card mx-auto" style="width: 18rem">
       <div class="card-body">
         <h5 class="card-title"><%= @user.username %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= @user.id %></h6>
@@ -12,9 +12,9 @@
         </p>
       </div>
       <ul class="list-group list-group-flush text-center">
-        <li class="list-group-item"><a href="<%= transactions_path %>" class="btn btn-primary">All my transactions</a></li>
-        <li class="list-group-item"><a href="<%= external_path %>" class="btn btn-primary">All my external transactions</a></li>
-        <li class="list-group-item"><a href="#" class="btn btn-primary">All groups</a></li>
+        <li class="list-group-item"><a href="<%= inversions_path %>" class="btn btn-primary">All my investments</a></li>
+        <li class="list-group-item"><a href="<%= external_path %>" class="btn btn-primary">All my external investments</a></li>
+        <li class="list-group-item"><a href="<%= groups_path %>" class="btn btn-primary">All products</a></li>
       </ul>
     </div>
   </div>

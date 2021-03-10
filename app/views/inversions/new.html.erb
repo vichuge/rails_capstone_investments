@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
-    <%= form_for(:investment, url: transactions_path, method: 'POST') do |u| %>
+    <%= form_for(:investment, url: inversions_path, method: 'POST') do |u| %>
     <div class="form-group">
       <%= u.text_field :name, autofocus: true, placeholder: 'University investment...',
       class: 'form-control', required: true %>
@@ -15,6 +15,10 @@
       <%= u.text_field :amount, placeholder: '$ 350.99',
       class: 'form-control', required: true %>
     </div>
+    <div class="form-group mt-2">
+      <%= u.select :group, options_for_select(@groups) %>
+    </div>
+    
     <div class="actions mt-3">
       <%= u.submit class: "btn btn-primary", value: "Enter" %>
     </div>

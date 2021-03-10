@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_232620) do
+ActiveRecord::Schema.define(version: 2021_03_10_225526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2021_03_09_232620) do
     t.bigint "transaction_id", null: false
   end
 
+  create_table "inversions", force: :cascade do |t|
+    t.string "name"
+    t.float "amount"
+    t.bigint "author_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_inversions_on_author_id"
+  end
+
   create_table "transactions", force: :cascade do |t|
     t.string "name"
     t.float "amount"
@@ -45,5 +54,6 @@ ActiveRecord::Schema.define(version: 2021_03_09_232620) do
   end
 
   add_foreign_key "groups", "users"
+  add_foreign_key "inversions", "users", column: "author_id"
   add_foreign_key "transactions", "users", column: "author_id"
 end
