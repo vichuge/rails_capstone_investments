@@ -11,10 +11,11 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       session[:username] = @user.username
+      flash[:success] = "Welcome #{@user.username}"
       redirect_to user_path(@user)
     else
-      flash.now[:danger] = 'Wrong login info'
-      render 'new'
+      flash[:danger] = 'Wrong login info'
+      redirect_to root_path
     end
   end
 
