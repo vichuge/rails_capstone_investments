@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_144059) do
+ActiveRecord::Schema.define(version: 2021_03_11_161127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "group_inversions", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "inversion_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_group_inversions_on_group_id"
+    t.index ["inversion_id"], name: "index_group_inversions_on_inversion_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -22,11 +31,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_144059) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_groups_on_user_id"
-  end
-
-  create_table "groups_inversions", id: false, force: :cascade do |t|
-    t.bigint "inversion_id", null: false
-    t.bigint "group_id", null: false
   end
 
   create_table "inversions", force: :cascade do |t|
