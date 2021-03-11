@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_161127) do
 
   create_table "inversions", force: :cascade do |t|
     t.string "name"
-    t.float "amount"
+    t.decimal "amount", precision: 100, scale: 2
     t.bigint "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

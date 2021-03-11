@@ -12,11 +12,11 @@
       class: 'form-control', required: true %>
     </div>
     <div class="form-group mt-2">
-      <%= u.text_field :amount, placeholder: '$ 350.99',
+      <%= u.text_field :amount, placeholder: '350.99',
       class: 'form-control', required: true %>
     </div>
     <div class="form-group mt-2">
-      <%= u.select :group, options_for_select(@groups) %>
+      <%= u.select :group, @groups %>
     </div>
     
     <div class="actions mt-3">
