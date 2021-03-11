@@ -15,3 +15,21 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "font-awesome";
+
+.bg-primary {
+  background-color: #3778c2 !important;
+}
+
+.btn-primary {
+  background-color: #5fb523 !important;
+  border-color: #5fb523 !important;
+}
+
+.list-group {
+  margin: auto 1em;
+  color: #434b54;
+}
+
+.list-group-item-action {
+  text-decoration: none;
+}

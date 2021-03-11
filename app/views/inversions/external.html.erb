@@ -17,9 +17,9 @@
         <div class="col-10">
           <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1"><%= inv.name %></h5>
-              <small><%= inv.created_at.strftime("%d %B %Y") %></small>
+              <small>$<%= inv.amount %></small>
             </div>
-            <p class="mb-1">$<%= inv.amount %></p>
+            <p class="mb-1"><%= inv.created_at.strftime("%d %B %Y") %></p>
         </div>
     </div>
     <hr>

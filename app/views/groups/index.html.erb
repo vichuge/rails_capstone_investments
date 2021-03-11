@@ -14,7 +14,7 @@
   <% @groups.each do |g| %>
   <a
     href="<%= group_path(g) %>"
-    class="list-group-item list-group-item-action"
+    class="list-group-item-action"
     aria-current="true"
   >
     <div class="row">
@@ -29,5 +29,6 @@
       </div>
     </div>
   </a>
+  <hr>
   <% end %>
 </div>
