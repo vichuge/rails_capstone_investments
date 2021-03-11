@@ -1,14 +1,12 @@
 class InversionsController < ApplicationController
   include SessionsHelper
   def index
-    # @inversions = Inversion.left_joins(group_inversions: :group).select('inversions.*, groups.icon AS icon').where(author_id: current_user).order(created_at: :asc)
-    @inversions = Inversion.joins(:users)
+    @inversions = Inversion.where(author_id: current_user)
     @total = Inversion.where(author_id: current_user).sum('amount')
   end
 
   def external
-    @transactions = Inversion.where(author_id: current_user)
-    @total = @transactions.sum('amount')
+    @inversions = Inversion.left_joins(:group_inversions).where('group_inversions is null').where(author_id: current_user)
   end
 
   def new
