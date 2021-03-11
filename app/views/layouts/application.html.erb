@@ -21,7 +21,7 @@
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
         <% if current_user %>
-          <h1><a class="navbar-brand" href="<%= user_path(session[:user_id]) %>"><%= session[:username] %></a></h1>
+          <h1><a class="navbar-brand" href="<%= user_path(session[:user_id]) %>"><i class="fas fa-user fa-2x"></i></a></h1>
           <a href="<%= inversions_path %>" class="navbar-brand"><i class="fas fa-globe-americas fa-2x"></i></a>
           <a href="<%= external_path %>" class="navbar-brand"><i class="fas fa-external-link-alt fa-2x"></i></a>
           <a href="<%= groups_path %>" class="navbar-brand"><i class="fas fa-hands-helping fa-2x"></i></a>
