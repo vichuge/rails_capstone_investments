@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsCapstoneInvestments</title>
+    <title>Rails Capstone Investments</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,11 +18,14 @@
     <%= msg %>
   </div>
 <% end %>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
         <% if current_user %>
-          <a class="navbar-brand" href="<%= user_path(session[:user_id]) %>"><%= session[:username] %></a>
-          <a class="navbar-brand" href="<%= sign_out_url %>">Log out</a>
+          <h1><a class="navbar-brand" href="<%= user_path(session[:user_id]) %>"><%= session[:username] %></a></h1>
+          <a href="<%= inversions_path %>" class="navbar-brand"><i class="fas fa-globe-americas fa-2x"></i></a>
+          <a href="<%= external_path %>" class="navbar-brand"><i class="fas fa-external-link-alt fa-2x"></i></a>
+          <a href="<%= groups_path %>" class="navbar-brand"><i class="fas fa-hands-helping fa-2x"></i></a>
+          <a class="navbar-brand" href="<%= sign_out_url %>"><i class="fas fa-sign-out-alt fa-2x"></i></a>
         <% else %>
         <a class="navbar-brand" href="<%= root_path %>">Navbar</a>
         <% end %>
