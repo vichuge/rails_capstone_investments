@@ -13,7 +13,7 @@
 <div class="list-group">
   <% @groups.each do |g| %>
   <a
-    href="#"
+    href="<%= group_path(g) %>"
     class="list-group-item list-group-item-action"
     aria-current="true"
   >

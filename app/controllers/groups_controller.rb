@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.where
+    @group = Group.find(params[:id])
+    @inversions = Inversion.joins(:group_inversions).where('group_inversions.group_id' => params[:id])
   end
 
   def new
