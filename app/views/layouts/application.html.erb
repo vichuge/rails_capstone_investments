@@ -14,12 +14,12 @@
 
   <body>
     <% flash.each do |type, msg| %>
-  <div class="alert alert-<%= type %>">
+  <div class="alert alert-<%= type %> mb-0">
     <%= msg %>
   </div>
 <% end %>
     <nav class="navbar navbar-dark bg-primary">
-      <div class="container-fluid">
+      <div class="d-flex container-fluid">
         <% if current_user %>
           <h1><a class="navbar-brand" href="<%= user_path(session[:user_id]) %>"><i class="fas fa-user fa-2x"></i></a></h1>
           <a href="<%= inversions_path %>" class="navbar-brand"><i class="fas fa-globe-americas fa-2x"></i></a>
@@ -27,7 +27,7 @@
           <a href="<%= groups_path %>" class="navbar-brand"><i class="fas fa-hands-helping fa-2x"></i></a>
           <a class="navbar-brand" href="<%= sign_out_url %>"><i class="fas fa-sign-out-alt fa-2x"></i></a>
         <% else %>
-        <a class="navbar-brand" href="<%= root_path %>">Navbar</a>
+        <a class="navbar-brand" href="<%= root_path %>"><i class="fas fa-home"></i></a>
         <% end %>
       </div>
     </nav>
