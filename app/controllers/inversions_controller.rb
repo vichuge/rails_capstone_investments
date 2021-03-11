@@ -11,7 +11,7 @@ class InversionsController < ApplicationController
   end
 
   def new
-    @groups = Group.all
+    @groups = Group.all.map { |g| [g.name, g.id] }
   end
 
   def create; end
