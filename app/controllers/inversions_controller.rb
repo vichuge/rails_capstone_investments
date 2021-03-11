@@ -15,7 +15,9 @@ class InversionsController < ApplicationController
   end
 
   def create
-    @inversion = Inversion.new(name: params[:investment][:name], amount: params[:investment][:amount])
+    @amount = params[:investment][:amount].to_f.round(2)
+
+    @inversion = Inversion.new(name: params[:investment][:name], amount: @amount)
     @inversion.author_id = session[:user_id]
     
     if @inversion.save
