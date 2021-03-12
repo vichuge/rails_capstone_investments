@@ -4,7 +4,7 @@
 
 This app is my capstone for Ruby on Rails Microverse module. This includes a sign in basic structure, investment control, group administration and all the forms and other necessary things to all the perfect functionality.
 
-![Profile page](./docs/Screenshot_1.png) ![Investments page](./docs/Screenshot_2.png)
+![Profile page](./docs/Screenshot_11.png) ![Investments page](./docs/Screenshot_2.png)
 
 ![Groups page](./docs/Screenshot_4.png) ![Form page](./docs/Screenshot_5.png)
 
