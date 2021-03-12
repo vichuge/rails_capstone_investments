@@ -3,7 +3,7 @@ class Group < ApplicationRecord
 
   belongs_to :user
   has_many :group_inversions
-  has_many :inversions, :through => :group_inversions
+  has_many :inversions, through: :group_inversions
 
-  scope :alphabetical_order, -> {order(name: :asc)}
+  scope :alphabetical_order, -> { order(name: :asc) }
 end
