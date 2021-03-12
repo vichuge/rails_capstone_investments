@@ -19,8 +19,8 @@ This app is my capstone for Ruby on Rails Microverse module. This includes a sig
 This website was tested with [Rspec](https://en.wikipedia.org/wiki/RSpec)
 
 ## 🔧 Built With these features
-- Ruby. v2.7.2
-- Rails. v6.1.3
+- Ruby 2.7.2
+- Rails 6.1.3
 - PostgreSQL
 - Using Rubocop Linters
 - Bootstrap
