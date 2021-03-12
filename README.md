@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-#  🧐 Investment groups (Web Application)
+# Investment groups (Web Application)
 
 This app is my capstone for Ruby on Rails Microverse module. This includes a sign in basic structure, investment control, group administration and all the forms and other necessary things to all the perfect functionality.
 
