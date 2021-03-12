@@ -6,9 +6,7 @@ This app is my capstone for Ruby on Rails Microverse module. This includes a sig
 
 ![Profile page](./docs/Screenshot_1.png) ![Investments page](./docs/Screenshot_2.png)
 
-![No group page](./docs/Screenshot_3.png) ![Groups page](./docs/Screenshot_4.png)
-
-![Form page](./docs/Screenshot_5.png)
+![Groups page](./docs/Screenshot_4.png) ![Form page](./docs/Screenshot_5.png)
 
 ## 🔴 Demos
 
