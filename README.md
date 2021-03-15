@@ -64,4 +64,6 @@ Contributions, issues and feature requests are welcome!
 Feel free to check the [issues page](https://github.com/vichuge/rails_capstone_investments/issues).
 
 ## 📝 License
-This project is [MIT](./LICENSE) licensed.
+
+This project is [Creative Commons Legal Code](https://github.com/vichuge/rails_capstone_investments/blob/main/LICENSE) licensed.
+Artistic attribution for [Gregoire Vella](https://www.behance.net/gregoirevella)
