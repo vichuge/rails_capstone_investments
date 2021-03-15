@@ -32,8 +32,4 @@ class InversionsController < ApplicationController
     end
     redirect_to inversions_path
   end
-
-  def edit; end
-
-  def update; end
 end

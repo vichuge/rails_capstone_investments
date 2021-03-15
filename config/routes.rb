@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
   resources :sessions, only: [:new, :create]
-  resources :inversions, only: [:index, :new, :create, :edit, :update]
-  resources :groups, only: [:index, :show, :new, :create, :edit, :update]
+  resources :inversions, only: [:index, :new, :create]
+  resources :groups, only: [:index, :show, :new, :create]
 
   get 'sign_out' => 'sessions#destroy'
   get 'external' => 'inversions#external'
