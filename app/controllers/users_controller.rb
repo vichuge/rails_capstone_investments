@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
-  def index; end
-
   def show
     @user = User.find(session[:user_id])
   end
-
-  def new; end
 
   def create
     @user = User.new(username: params[:user][:username])
@@ -19,8 +15,4 @@ class UsersController < ApplicationController
       redirect_to new_user_url
     end
   end
-
-  def edit; end
-
-  def update; end
 end
