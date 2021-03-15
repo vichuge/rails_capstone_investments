@@ -2,11 +2,8 @@ class SessionsController < ApplicationController
   include SessionsHelper
   before_action :logged_user?, only: [:new]
 
-  def new; end
-
   def create
     @user = User.find_by(username: params[:session][:username])
-    # @user ||= User.find(params[:session][:username].to_i)
 
     if @user
       session[:user_id] = @user.id
@@ -21,7 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    # session[:username] = nil
     flash[:success] = 'Log out successfully'
     redirect_to root_path
   end

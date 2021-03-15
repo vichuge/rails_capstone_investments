@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:create]
   resources :inversions, only: [:index, :new, :create]
   resources :groups, only: [:index, :show, :new, :create]
 
