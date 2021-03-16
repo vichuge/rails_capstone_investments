@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @inversions = Inversion.joins(:group_inversions).where('group_inversions.group_id' => params[:id])
+    @inversions = Inversion.in_a_group(params[:id])
   end
 
   def new
@@ -13,7 +13,8 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(name: params[:group][:name], icon: params[:group][:icon], user_id: session[:user_id])
+    @group = Group.new(group_params)
+    @group.user_id = session[:user_id]
     if @group.save
       flash[:success] = 'Group created succesfully!'
       redirect_to groups_path
@@ -21,5 +22,11 @@ class GroupsController < ApplicationController
       flash[:danger] = 'Group was not created, please try again :c'
       redirect_to new_group_url
     end
+  end
+
+  private
+
+  def group_params
+    params.require(:group).permit(:name, :icon)
   end
 end

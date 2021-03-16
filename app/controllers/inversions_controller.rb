@@ -2,22 +2,22 @@ class InversionsController < ApplicationController
   include SessionsHelper
   def index
     @inversions = Inversion.where(author_id: current_user)
-    @total = Inversion.where(author_id: current_user).sum('amount')
+    @total = Inversion.total(current_user)
   end
 
   def external
-    @inversions = Inversion.left_joins(:group_inversions).where('group_inversions is null', author_id: current_user)
+    @inversions = Inversion.externals(current_user)
   end
 
   def new
-    @groups = Group.all.map { |g| [g.name, g.id] }
-    @groups.unshift(['select and option...', 0])
+    @groups = Group.select_options
   end
 
   def create
     @amount = params[:investment][:amount].to_f.round(2)
 
-    @inversion = Inversion.new(name: params[:investment][:name], amount: @amount)
+    # @inversion = Inversion.new(name: params[:investment][:name], amount: @amount)
+    @inversion = Inversion.new(inversion_params)
     @inversion.author_id = session[:user_id]
 
     if @inversion.save
@@ -31,5 +31,11 @@ class InversionsController < ApplicationController
       flash[:danger] = 'Inversion was not created, please try again :c'
     end
     redirect_to inversions_path
+  end
+
+  private
+
+  def inversion_params
+    params.require(:investment).permit(:name, :amount.to_f.round(2))
   end
 end

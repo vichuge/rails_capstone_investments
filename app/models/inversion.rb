@@ -6,4 +6,7 @@ class Inversion < ApplicationRecord
   has_many :groups, through: :group_inversions
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
+  scope :total, ->(current_user) { where(author_id: current_user).sum('amount') }
+  scope :externals, ->(current_user) { left_joins(:group_inversions).where('group_inversions is null', author_id: current_user) }
+  scope :in_a_group, -> (id) { joins(:group_inversions).where('group_inversions.group_id' => id) }
 end
