@@ -9,7 +9,7 @@
     <%= form_for(:session, url: sessions_path, method: 'POST') do |u| %>
     <div class="form-group">
       <%= u.text_field :username, autofocus: true, placeholder: 'Jason Bourne',
-      class: 'form-control', required: true, pattern: '[a-zA-Z0-9 ]{5,100}' %>
+      class: 'form-control', required: true, pattern: '[a-zA-Z0-9 ]{4,100}' %>
     </div>
     <div class="actions mt-3">
       <%= u.submit class: "btn btn-primary", value: "Enter" %>

@@ -23,7 +23,7 @@
               <h5 class="mb-1"><%= inv.name %></h5>
               <small>$<%= inv.amount %></small>
             </div>
-            <p class="mb-1"><%= inv.created_at.strftime("%d %B %Y") %></p>
+            <p class="mb-1"><%= convert_datetime(inv.created_at) %></p>
         </div>
     </div>
     <hr>

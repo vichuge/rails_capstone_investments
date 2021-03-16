@@ -14,7 +14,7 @@
       <div class="d-flex w-100 justify-content-between">
         <p class="mb-1"><%= take_username(i.author_id) %></p>
         <h5 class="mb-1"><%= i.name %></h5>
-        <small><%= i.created_at.strftime("%d %B %Y") %></small>
+        <small><%= convert_datetime(i.created_at) %></small>
       </div>
       <p class="mb-1">$<%= i.amount %></p>
     </div>

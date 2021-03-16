@@ -6,4 +6,8 @@ module ApplicationHelper
   def take_username(id)
     User.find(id).username
   end
+
+  def convert_datetime(datetime)
+    datetime.strftime("%d %B %Y")
+  end
 end
