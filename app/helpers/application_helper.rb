@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def convert_datetime(datetime)
-    datetime.strftime("%d %B %Y")
+    datetime.strftime('%d %B %Y')
   end
 end

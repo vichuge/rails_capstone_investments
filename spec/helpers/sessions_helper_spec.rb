@@ -11,7 +11,6 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe SessionsHelper, type: :helper do
-
   describe '#current_user' do
     it 'check the user id logged in page' do
       user = User.find_by(username: 'test 1')
