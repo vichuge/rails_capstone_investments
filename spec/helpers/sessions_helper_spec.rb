@@ -18,6 +18,10 @@ RSpec.describe SessionsHelper, type: :helper do
       session[:username] = user.username
       expect(current_user.nil?).to eql(false)
     end
+
+    it 'take current user without a created session' do
+      expect(current_user.nil?).to eql(true)
+    end
   end
 
   describe '#logged_user?' do
