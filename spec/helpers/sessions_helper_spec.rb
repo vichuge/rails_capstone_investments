@@ -13,10 +13,10 @@ require 'rails_helper'
 RSpec.describe SessionsHelper, type: :helper do
   describe '#current_user' do
     it 'check the user id logged in page' do
-      user = User.find(1)
+      user = User.create(username: 'test')
       session[:user_id] = user.id
       session[:username] = user.username
-      expect(current_user).to eql(1)
+      expect(current_user.nil?).to eql(false)
     end
   end
 
