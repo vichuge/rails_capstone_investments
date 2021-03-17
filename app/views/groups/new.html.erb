@@ -1,0 +1,24 @@
+<% redirect_to_login %>
+<div class="row my-4">
+    <div class="text-center">
+      <h1 class="center">Create new product</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= form_for(:group, url: groups_path, method: 'POST') do |u| %>
+      <div class="form-group">
+        <%= u.text_field :name, autofocus: true, placeholder: 'Disney +',
+        class: 'form-control', required: true, pattern: '[a-zA-Z0-9 ]{5,100}' %>
+      </div>
+      <div class="form-group mt-2">
+        <%= u.select :icon, options_for_select(@icons) %>
+      </div>
+      <div class="actions mt-3">
+        <%= u.submit class: "btn btn-primary", value: "Enter" %>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-4"></div>
+  </div>

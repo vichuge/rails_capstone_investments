@@ -10,6 +10,33 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import "font-awesome";
+
+.bg-primary {
+  background-color: #3778c2 !important;
+}
+
+.btn-primary {
+  background-color: #5fb523 !important;
+  border-color: #5fb523 !important;
+}
+
+.list-group {
+  margin: auto 1em;
+  color: #434b54;
+}
+
+.list-group-item-action {
+  text-decoration: none;
+}
+
+select {
+  width: auto;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}

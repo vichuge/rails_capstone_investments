@@ -1,0 +1,24 @@
+<% redirect_to_login %>
+<div class="row text-center mb-5">
+  <div class="col-12">
+    <h1>All inversions to <%= @group.name %></h1>
+  </div>
+</div>
+<div class="list-group">
+  <% @inversions.each do |i| %>
+  <div class="row">
+    <div class="col-2">
+      <i class="fas fa-<%= take_icon(i.id) %> fa-3x"></i>
+    </div>
+    <div class="col-10">
+      <div class="d-flex w-100 justify-content-between">
+        <p class="mb-1"><%= take_username(i.author_id) %></p>
+        <h5 class="mb-1"><%= i.name %></h5>
+        <small><%= convert_datetime(i.created_at) %></small>
+      </div>
+      <p class="mb-1">$<%= i.amount %></p>
+    </div>
+  </div>
+  <hr />
+  <% end %>
+</div>

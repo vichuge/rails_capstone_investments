@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsCapstoneInvestments</title>
+    <title>Rails Capstone Investments</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+  <div class="alert alert-<%= type %> mb-0">
+    <%= msg %>
+  </div>
+<% end %>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="d-flex container-fluid">
+        <% if current_user %>
+          <h1><a class="navbar-brand" href="<%= user_path(session[:user_id]) %>"><i class="fas fa-user fa-2x"></i></a></h1>
+          <a href="<%= inversions_path %>" class="navbar-brand"><i class="fas fa-globe-americas fa-2x"></i></a>
+          <a href="<%= external_path %>" class="navbar-brand"><i class="fas fa-external-link-alt fa-2x"></i></a>
+          <a href="<%= groups_path %>" class="navbar-brand"><i class="fas fa-hands-helping fa-2x"></i></a>
+          <a class="navbar-brand" href="<%= sign_out_url %>"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+        <% else %>
+        <a class="navbar-brand" href="<%= root_path %>"><i class="fas fa-home"></i></a>
+        <% end %>
+      </div>
+    </nav>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <%= yield %>
   </body>
 </html>

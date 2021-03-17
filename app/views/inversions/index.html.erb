@@ -1,0 +1,46 @@
+<% redirect_to_login %>
+<div class="row text-center my-4">
+  <div class="col-12">
+    <h1>All my investments</h1>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="card text-center my-3 mx-auto" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Total inversion</h5>
+        <h6 class="card-subtitle mb-2 text-muted">$<%= '%.2f' % @total %></h6>
+        <p class="card-text">
+            The total investment in all groups and those that have not yet been assigned.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<div class="row text-center mb-3">
+  <div class="col-12">
+    <a class="btn btn-primary" href="<%= new_inversion_url %>" role="button">Add new <i class="fas fa-plus"></i> </a>
+  </div>
+</div>
+<div class="list-group">
+  <% @inversions.each do |inv| %>
+  <div class="row">
+      <div class="col-2">
+        <i class="fas fa-<%= take_icon(inv.id) %> fa-3x"></i>
+      </div>
+      <div class="col-2">
+        <a class="btn btn-primary" href="#" role="button">Add a group <i class="fas fa-layer-group"></i> </a>
+      </div>
+      <div class="col-8">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= inv.name %></h5>
+            <small>$<%= '%.2f' % inv.amount %></small>
+          </div>
+          <p class="mb-1"><%= convert_datetime(inv.created_at) %></p>
+      </div>
+  </div>
+  <hr>
+  <% end %>
+</div>

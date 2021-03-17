@@ -1,0 +1,20 @@
+<div class="row my-4">
+  <div class="text-center">
+    <h1 class="center">Create user</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <%= form_for(:user, url: users_path, method: 'POST') do |u| %>
+    <div class="form-group">
+      <%= u.text_field :username, autofocus: true, placeholder: 'Jason Bourne',
+      class: 'form-control', required: true, pattern: '[a-zA-Z0-9 ]{4,100}' %>
+    </div>
+    <div class="actions mt-3">
+      <%= u.submit class: "btn btn-primary", value: "Enter" %>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-md-4"></div>
+</div>
