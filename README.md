@@ -63,6 +63,14 @@ Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/vichuge/rails_capstone_investments/issues).
 
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Gregoire Vella](https://www.behance.net/gregoirevella) for his artistic attribution
+
 ## 📝 License
 
 This project is [Creative Commons Legal Code](https://github.com/vichuge/rails_capstone_investments/blob/main/LICENSE) licensed.
