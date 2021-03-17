@@ -12,7 +12,7 @@ This app is my capstone for Ruby on Rails Microverse module. This includes a sig
 
 [Live Demo](https://safe-dusk-09633.herokuapp.com/)
 
-[Video Demo](https://www.loom.com/share/2ec9cf032b394533a51094dac4f7cd88)
+[Video Demo](https://www.loom.com/share/ba17980a6cab489e9227fd1bde000ed6)
 
 ## Tests with RSpec 
 
