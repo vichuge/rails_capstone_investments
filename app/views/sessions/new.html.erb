@@ -1,25 +1,27 @@
-<div class="row my-4">
-  <div class="text-center">
-    <h1 class="center">Type your name...</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-    <%= form_for(:session, url: sessions_path, method: 'POST') do |u| %>
-    <div class="form-group">
-      <%= u.text_field :username, autofocus: true, placeholder: 'Jason Bourne',
-      class: 'form-control', required: true, pattern: '[a-zA-Z0-9 ]{4,100}' %>
+<div class="container">
+  <div class="row my-4">
+    <div class="text-center">
+      <h1 class="center">Type your name...</h1>
     </div>
-    <div class="actions mt-3">
-      <%= u.submit class: "btn btn-primary", value: "Enter" %>
-    </div>
-    <% end %>
   </div>
-  <div class="col-md-4"></div>
-</div>
-<div class="row my-3">
-  <div class="col text-center">
-    <a href="<%= new_user_url %>">Do you don't have an account?</a>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= form_for(:session, url: sessions_path, method: 'POST') do |u| %>
+        <div class="form-group">
+          <%= u.text_field :username, autofocus: true, placeholder: 'Jason Bourne',
+      class: 'form-control', required: true, pattern: '[a-zA-Z0-9 ]{4,100}', value: 'Jason Bourne' %>
+        </div>
+        <div class="actions mt-3">
+          <%= u.submit class: "btn btn-primary", value: "Enter" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row my-3">
+    <div class="col text-center">
+      <a href="<%= new_user_url %>">Do you don't have an account?</a>
+    </div>
   </div>
 </div>
