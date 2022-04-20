@@ -10,7 +10,7 @@ This app is my capstone for Ruby on Rails Microverse module. This includes a sig
 
 ## 🔴 Demos
 
-[Live Demo](https://safe-dusk-09633.herokuapp.com/)
+[Live Demo](https://vichuge-investments.herokuapp.com/)
 
 [Video Demo](https://www.loom.com/share/ba17980a6cab489e9227fd1bde000ed6)
 
